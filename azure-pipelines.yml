@@ -14,13 +14,19 @@ steps:
     repository: $(imageName)
     command: build
     Dockerfile: app/Dockerfile
-- task: Docker@2
-  inputs:
-    containerRegistry: 'suusar-dockerhub'
-    command: 'login'
+# - task: Docker@2
+#   inputs:
+#     containerRegistry: 'suusardzh-1'
+#     command: 'login'
 - task: Docker@2
   displayName: Push an image
   inputs:
-    containerRegistry: 'suusar-dockerhub'
+    containerRegistry: 'suusardzh-1'
     repository: $(imageName)
-    command: 'push'
+    command: 'loginAndPush'
+# - task: Docker@2
+#   inputs:
+#     containerRegistry: 'suusardzh-1'
+#     repository: 'pipelines-javascript-docker'
+#     command: 'buildAndPush'
+#     Dockerfile: '**/Dockerfile'
