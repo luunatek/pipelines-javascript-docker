@@ -17,6 +17,6 @@ steps:
 - task: Docker@2
   displayName: Push an image
   inputs:
-    containerRegistry: 'suusardzh'
+    containerRegistry: 'suusar-dockerhub'
     repository: $(imageName)
     command: 'push'
