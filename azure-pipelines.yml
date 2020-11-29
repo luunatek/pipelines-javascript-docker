@@ -15,6 +15,10 @@ steps:
     command: build
     Dockerfile: app/Dockerfile
 - task: Docker@2
+  inputs:
+    containerRegistry: 'suusar-dockerhub'
+    command: 'login'
+- task: Docker@2
   displayName: Push an image
   inputs:
     containerRegistry: 'suusar-dockerhub'
