@@ -7,7 +7,7 @@ pool:
 variables:
 # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'luunatek-1'
-  imageName: 'pipelines-javascript-docker'
+  imageName: 'luunatek/pipelines-javascript-docker'
   containerRegistry: 'luunatek-1'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
