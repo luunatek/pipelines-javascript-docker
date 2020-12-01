@@ -5,7 +5,12 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
-  imageName: 'luunatek/pipelines-javascript-docker'
+# Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: 'luunatek-1'
+  imageName: 'pipelines-javascript-docker'
+  containerRegistry: 'luunatek-1'
+  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
+  tag: '$(Build.BuildId)'
 
 steps:
 - task: Docker@2
